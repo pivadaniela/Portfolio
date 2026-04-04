@@ -1,0 +1,419 @@
+@charset 'utf-8';
+
+body {
+    /* Ruta de tu imagen */
+    background-image: url('/fondo.png');
+    
+    /* Cubre toda la pantalla sin deformarse */
+    background-size: cover;
+    
+    /* Mantiene la imagen fija al hacer scroll (Efecto elegante) */
+    background-attachment: fixed;
+    
+    /* Centra la imagen siempre */
+    background-position: center;
+    
+    /* Evita que se repita si la página es muy larga */
+    background-repeat: no-repeat;
+
+    /* Asegura que el fondo ocupe al menos el 100% de la altura de la pantalla */
+    min-height: 100vh;
+    margin: 0;
+    
+    /* Opcional: Color de fondo de respaldo por si la imagen no carga */
+    background-color: #0b0b0e;
+    
+    font-family: "Quicksand", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-style: normal;
+}
+
+
+
+
+
+.nav-glass-container {
+  position: absolute;
+  /* Efecto Vidrio */
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  
+  border-radius: 50px;
+  padding: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  display: inline-flex;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  top: 2rem;
+    right: 38rem;
+}
+
+
+.gooey-layer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  filter: url('#goo'); /* El filtro SOLO afecta a esta capa */
+  pointer-events: none; /* Para que no bloquee los clics al texto */
+}
+
+.knob {
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  width: 120px; /* Ancho inicial */
+  height: calc(100% - 10px);
+  background: #f1b4b4;
+  border-radius: 40px;
+  transition: all 0.5s cubic-bezier(0.6, -0.28, 0.735, 0.045);
+}
+
+.nav-main {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  position: relative;
+  z-index: 10; /* Texto por ENCIMA de todo */
+}
+
+.nav-item {
+  color: white;
+  padding: 15px 35px;
+  cursor: pointer;
+
+  transition: color 0.3s;
+  user-select: none;
+   font-family: "Quicksand", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-style: normal;
+  font-size: 18px;
+}
+
+.nav-item.active {
+  color: black; /* El texto activo sobre el amarillo */
+}
+
+
+.divlogo{  position: fixed;
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border-radius: 100px;
+    padding: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    display: inline-flex;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    top: 2rem;
+    right: 88rem;
+}
+
+.logoheader{
+    width: 70px;
+}
+
+.buttonheader{  position: absolute;
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+   border-radius: 100px;
+    padding: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    display: inline-flex;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    top: 2rem;
+    left: 83rem;
+    font-family: "Quicksand", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 700;
+    font-style: normal;
+    font-size: 20px;
+    height: 10%;
+}
+
+/* EL HOVER QUE INVIERTE TODO */
+.buttonheader:hover {
+    /* Fondo se vuelve blanco sólido (o tu amarillo GleamDetail) */
+    background: rgba(255, 255, 255, 1); 
+    
+    /* El texto se vuelve oscuro */
+    color: #111; 
+    
+    /* Quitamos el blur porque el fondo ya no es transparente */
+    backdrop-filter: blur(0px);
+    
+    /* Opcional: una sombra más brillante para que parezca que resalta */
+    box-shadow: 0 15px 40px rgba(255, 255, 255, 0.2);
+    
+    /* Un leve movimiento hacia arriba para dar feedback */
+    transform: translateY(-3px);
+}
+
+.aheader{
+    text-decoration: none;
+    color: #580505;
+    margin-top: 15px;
+}
+
+
+.masking-container
+    {
+    position: relative;
+    top: 13rem;
+}
+
+
+.masked-text {
+    
+    text-align: center;
+    font-size: 50px;
+   
+    color: transparent;
+    background-image: url('https://images.unsplash.com/photo-1732535725600-f805d8b33c9c?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'); 
+    background-size: 200%; /* Enlarged for smooth animation */
+    background-position: 0 50%;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: animate-background 5s infinite alternate linear;
+    font-family: "Quicksand", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-style: normal;
+}
+
+@keyframes animate-background {
+    0% {
+        background-position: 0 50%;
+    }
+    100% {
+        background-position: 100% 50%;
+    }
+}
+
+.contenedorservicio{
+background: rgba(184, 181, 181, 0.252);
+    backdrop-filter: blur(15px);
+    
+    /* Borde que simula el reflejo del cristal */
+    border: 1px solid rgba(255, 255, 255, 0.15); 
+    
+    /* Sombra ambiental oscura */
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.8); 
+    
+    border-radius: 20px;
+    width: 70%;
+    margin-top: 5%;
+    margin-left: 15%;
+}
+
+.nombredelservicio{
+    border: 3px solid gray;
+        margin: 13px;
+    border-radius: 20px;
+}
+
+.svgcards{width: 60px;}
+
+.tiempos{
+    border: 3px solid gray;
+    margin: 13px;
+    border-radius: 20px;
+}
+
+.contenedortiempos{display: flex;
+}
+
+.contenedorincluye{display: flex;
+}
+.incluye{
+    border: 3px solid gray;
+    margin: 13px;
+    border-radius: 20px;
+}
+
+.h1servicios{
+    text-align: center;
+    
+    margin-top: 30%;
+    font-size: 50px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    color: white;
+}
+.h2servicios{
+    text-align: center;
+    
+    margin-top: 2%;
+    font-size: 30px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    color: white;
+    width: 70%;
+    margin-left: 15%;
+}
+
+
+
+/* CSS */
+.button-30 {
+  align-items: center;
+  appearance: none;
+  background-color: #7bbdce00;
+  border-radius: 4px;
+  border-width: 0;
+  box-shadow: rgba(59, 93, 118, 0.4) 0 2px 4px,rgba(45, 35, 66, 0.3) 0 7px 13px -3px,#D6D6E7 0 -3px 0 inset;
+  box-sizing: border-box;
+  color: #36395A;
+  cursor: pointer;
+  display: inline-flex;
+  font-family: "JetBrains Mono",monospace;
+  height: 38px;
+  justify-content: center;
+  line-height: 1;
+  list-style: none;
+  overflow: hidden;
+  padding-left: 16px;
+  padding-right: 16px;
+  position: relative;
+  text-align: left;
+  text-decoration: none;
+  transition: box-shadow .15s,transform .15s;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  white-space: nowrap;
+  will-change: box-shadow,transform;
+  font-size: 18px;
+    margin-left: 85%;
+    margin-bottom: 14px;
+}
+
+.button-30:focus {
+  box-shadow: #D6D6E7 0 0 0 1.5px inset, rgba(45, 35, 66, 0.4) 0 2px 4px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #D6D6E7 0 -3px 0 inset;
+}
+
+.button-30:hover {
+  box-shadow: rgba(45, 35, 66, 0.4) 0 4px 8px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #D6D6E7 0 -3px 0 inset;
+  transform: translateY(-2px);
+}
+
+.button-30:active {
+  box-shadow: #D6D6E7 0 3px 7px inset;
+  transform: translateY(2px);
+}
+a{
+    text-decoration: none;
+      font-family: "Quicksand", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 700;
+    color: gray;
+}
+
+
+.step-card {
+  width: 320px;
+  border-radius: 25px; /* Un poco más redondeado para más elegancia */
+  background: transparent; 
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+  position: relative;
+  font-family: 'Poppins', sans-serif;
+}
+
+.card-header {
+  /* Degradado Fucsia/Morado */
+  background: linear-gradient(135deg, #e136b8 0%, #a631d8 100%);
+  padding: 30px 25px; /* Más padding arriba para que el título respire */
+  height: 110px; 
+  display: flex;
+  align-items: flex-start; /* Título alineado arriba */
+}
+
+.step-title {
+  color: white;
+  font-weight: 800;
+  font-size: 18px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.card-content-wrapper {
+  background: white;
+  border-radius: 20px;
+  margin: -45px 15px 20px 15px; /* El -45px hace la superposición */
+  padding: 8px; /* El "borde" blanco fino alrededor de la imagen */
+  height: 280px; 
+  position: relative;
+  z-index: 2;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+.content-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Clave para que la foto no se estire */
+  border-radius: 15px;
+}
+
+/* Efecto opcional: Que la imagen brille un poco al pasar el mouse */
+.step-card:hover .content-image {
+  transform: scale(1.05);
+  transition: transform 0.5s ease;
+}
+
+.pservicios{margin: 10px;}
+
+.clientes {
+    display: grid;
+    /* En móviles (por defecto) 1 columna */
+    grid-template-columns: 1fr; 
+    gap: 40px; /* Espacio entre las cards */
+    padding: 50px 10% ;
+    justify-items: center;
+}
+
+/* Solo en pantallas grandes (Laptops) se ponen de a dos */
+@media (min-width: 992px) {
+    .clientes {
+        grid-template-columns: repeat(2, 400px); /* Dos columnas de 400px fijas */
+        justify-content: center;
+    }
+    
+    .h1servicios, .h2servicios {
+        grid-column: span 2; /* Los títulos ocupan las dos columnas */
+        text-align: center;
+    }
+}
+
+@media (min-width: 768px) {
+  .button-54 {
+    padding: 0.25em 0.75em;
+  }
+}
+
+
+.trabajos {
+    display: grid;
+    /* En móviles (por defecto) 1 columna */
+    grid-template-columns: 1fr; 
+    gap: 40px; /* Espacio entre las cards */
+    padding: 50px 10% ;
+    justify-items: center;
+}
+
+/* Solo en pantallas grandes (Laptops) se ponen de a dos */
+@media (min-width: 992px) {
+    .trabajos {
+        grid-template-columns: repeat(2, 400px); /* Dos columnas de 400px fijas */
+        justify-content: center;
+    }
+    
+  
+}
+
+
+
