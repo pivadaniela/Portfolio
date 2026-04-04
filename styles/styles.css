@@ -378,42 +378,102 @@ a{
 
 /* Solo en pantallas grandes (Laptops) se ponen de a dos */
 @media (min-width: 992px) {
-    .clientes {
-        grid-template-columns: repeat(2, 400px); /* Dos columnas de 400px fijas */
-        justify-content: center;
-    }
-    
+
     .h1servicios, .h2servicios {
         grid-column: span 2; /* Los títulos ocupan las dos columnas */
         text-align: center;
     }
 }
 
-@media (min-width: 768px) {
+
+
+/* 1. El contenedor PADRE */
+.trabajos {
+    display: flex; /* Usamos Flexbox en lugar de Grid para forzar la línea */
+    justify-content: center; /* Las centra todas juntas */
+    align-items: flex-start;
+    gap: 15px; /* Espacio pequeño entre ellas para que no se pisen */
+    padding: 10px 12%;
+    width: 100%;
+    box-sizing: border-box; /* Fundamental para que el padding no sume ancho */
+}
+
+/* 2. La CARD (El secreto está acá) */
+.step-card {
+    /* IMPORTANTE: Quitá cualquier "width: 400px" o similar que tengas */
+    flex: 1; /* Esto obliga a las 3 cards a medir exactamente lo mismo */
+    min-width: 250px; /* Ancho mínimo para que no se deformen */
+    max-width: 380px; /* Ancho máximo para que no se estiren demasiado */
+    
+    /* Reseteamos márgenes que puedan estar molestando */
+    margin: 0 !important; 
+    box-sizing: border-box;
+}
+
+/* 3. Ajuste para la imagen interna */
+.card-content-wrapper {
+    width: auto; /* Que se adapte al nuevo ancho de la card */
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+
+
+@media (max-width: 480px) {
   .button-54 {
     padding: 0.25em 0.75em;
   }
+
+  body{
+    width: 68rem;
 }
 
+header{
+    position: absolute;
+    left: 7rem;
+}
 
-.trabajos {
+.nav-glass-container{
+    position: absolute;
+    left: 17rem;
+    top: 1rem;
+    width: 18rem;
+}
+
+.buttonheader{
+    position: absolute;
+    left: 52rem;
+    height: 5rem;
+    top: 1rem;
+}
+
+.divlogo{
+    position: absolute;
+    left: -2rem;
+    width: 4rem;
+    top: 1rem;
+}.masked-text {
+    width: 55rem;
+    margin-left: 11%;
+}
+
+.clientes {
     display: grid;
-    /* En móviles (por defecto) 1 columna */
-    grid-template-columns: 1fr; 
-    gap: 40px; /* Espacio entre las cards */
-    padding: 50px 10% ;
+    grid-template-columns: 1fr;
+    gap: 40px;
+    padding: 41px 2%;
     justify-items: center;
 }
 
-/* Solo en pantallas grandes (Laptops) se ponen de a dos */
-@media (min-width: 992px) {
-    .trabajos {
-        grid-template-columns: repeat(2, 400px); /* Dos columnas de 400px fijas */
-        justify-content: center;
-    }
-    
-  
+.trabajos {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 15px;
+    padding: 10px 48%;
+    width: 100%;
+    box-sizing: border-box;
+    margin-left: 1%;
 }
 
-
-
+}
