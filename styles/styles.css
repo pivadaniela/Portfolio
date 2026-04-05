@@ -8,21 +8,14 @@ background: linear-gradient(171deg,rgba(191, 54, 194, 1) 0%, rgba(237, 149, 152,
     /* Cubre toda la pantalla sin deformarse */
     background-size: cover;
     
-    /* Mantiene la imagen fija al hacer scroll (Efecto elegante) */
-    background-attachment: fixed;
-    
-    /* Centra la imagen siempre */
-    background-position: center;
-    
-    /* Evita que se repita si la página es muy larga */
-    background-repeat: no-repeat;
+
 
     /* Asegura que el fondo ocupe al menos el 100% de la altura de la pantalla */
     min-height: 100vh;
     margin: 0;
     
     /* Opcional: Color de fondo de respaldo por si la imagen no carga */
-    background-color: #0b0b0e;
+  
     
     font-family: "Quicksand", sans-serif;
   font-optical-sizing: auto;
