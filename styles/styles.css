@@ -2,7 +2,8 @@
 
 body {
     /* Ruta de tu imagen */
-    background-image: url('/fondo.png');
+    background: #bf36c2;
+background: linear-gradient(171deg,rgba(191, 54, 194, 1) 0%, rgba(237, 149, 152, 1) 22%, rgba(204, 189, 182, 1) 49%, rgba(123, 224, 204, 1) 77%, rgba(51, 161, 181, 1) 100%);
     
     /* Cubre toda la pantalla sin deformarse */
     background-size: cover;
